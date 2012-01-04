@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Sample - Browser-Hosted Downloads</title>
+	  <link href="res/default.css" rel="stylesheet" type="text/css" />
+    <script src="../dist/bhd.js"></script>
+  </head>
+  <body>
+    <div class="outer"><div class="inner">
+      <div class="inner">
+        <h1>Browser-Hosted Downloads</h1>
+        <p> Here's an example of Browser-Hosted Downloads in action. </p>
+        <label> File Name
+          <input type="text" id="filename" value="sample.txt" />
+        </label>
+        <label> File Contents
+          <textarea id="filedata" rows="10">Hello world!</textarea>
+        </label>
+      </div>
+      <div id="dl_button"></div>
+      <div class="inner"><br />Press the button to download your file.</div>
+      <br style="clear:both" />
+    </div></div>
+    <script>
+    
+//(function(){
+
+var testBtn = new BHD.Button({
+  // id of the element to replace with this button (required)
+  id:'dl_button',
+  // button image
+  sprite:'res/buttons.png'
+},function(){
+  // set default filename to the value of the text input
+  testBtn.setFile(document.getElementById('filename').value);
+  // set file contents to the value of the textarea
+  testBtn.setData(document.getElementById('filedata').value);
+});
+
+//}());
+
+    </script>
+  </body>
+</html>

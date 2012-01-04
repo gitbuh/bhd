@@ -1,0 +1,9 @@
+* {font-family: sans-serif}
+body, html {font-size: 10pt; color: #333; }
+#dl_button {float:right;}
+.inner {margin:8px;}
+.outer {width:500px; margin:auto; background:#eee; border:4px solid #fff; box-shadow: 0px 4px 16px rgba(0,0,0,0.33); border-radius: 6px; }
+label {display:block; font-weight:bold; margin:1em 0; }
+input, textarea {width:100%; border:1px solid #ccc; line-height: 150%;}
+input:focus, textarea:focus {outline: 5px auto #3465A4;}
+

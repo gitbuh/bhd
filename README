@@ -1,0 +1,13 @@
+Browser Hosted Downloads
+
+Serverless downloads for web clients. See example/index.html.
+
+INSTALLING:
+
+Copy the contents of dist/ into your project. Load the bhd.js
+script in your html documents.
+
+COMPILING:
+
+You must have haxe and make installed. Run make.
+ 
