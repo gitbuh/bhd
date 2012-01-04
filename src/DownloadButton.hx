@@ -12,6 +12,8 @@ class DownloadButton {
   
   public var filename:String;
   public var data:Dynamic;
+  public var url:String;
+  public var useUrl:Bool;
   public var sprite:Loader;
   public var button:MovieClip;
   
@@ -27,6 +29,7 @@ class DownloadButton {
     this.draw();
 	  ExternalInterface.addCallback("setFile", this.setFile);
 	  ExternalInterface.addCallback("setData", this.setData);
+	  ExternalInterface.addCallback("setUrl", this.setUrl);
   }
   
   public function setFile (filename:String) {
@@ -35,6 +38,12 @@ class DownloadButton {
   
   public function setData (data:Dynamic) {
     this.data = data;
+    this.useUrl = false;
+  }
+  
+  public function setUrl (url:String) {
+    this.url = url;
+    this.useUrl = true;
   }
   
   private function draw () {
@@ -66,9 +75,14 @@ class DownloadButton {
   }
   
   private function handleMouseUp (event:MouseEvent) {
-    var file = new FileReference();
+    var file:FileReference = new FileReference();
     ExternalInterface.call(getParam("callbackName"));
-    file.save(this.data, this.filename);
+    if (this.useUrl) {
+      var request:URLRequest = new URLRequest(this.url);  
+      file.download(request);
+    } else {
+      file.save(this.data, this.filename);
+    }
   }
   
   private function handleMouseOut (event:MouseEvent) {

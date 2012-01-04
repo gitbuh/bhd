@@ -132,4 +132,14 @@ BHD.Button.prototype.setFile = function (value) {
 BHD.Button.prototype.setData = function (value) {
   return this.getElement().setData(value);
 };
+
+/** setUrl
+
+    Set the URL of the download file.
+    
+    @param Mixed value 
+*/
+BHD.Button.prototype.setUrl = function (value) {
+  return this.getElement().setUrl(value);
+};
     

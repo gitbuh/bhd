@@ -22,7 +22,7 @@ BHD.getScriptPath = function () {
 }
 
 BHD.include = function (file, callback) {
-  var uid = BHD.uid();
+  var uid = BHD.uid(), frame;
   frame = document.createElement('iframe');
   frame.src = file;
   frame.id = frame.name = uid;
@@ -131,5 +131,15 @@ BHD.Button.prototype.setFile = function (value) {
 */
 BHD.Button.prototype.setData = function (value) {
   return this.getElement().setData(value);
+};
+
+/** setUrl
+
+    Set the URL of the download file.
+    
+    @param Mixed value 
+*/
+BHD.Button.prototype.setUrl = function (value) {
+  return this.getElement().setUrl(value);
 };
     
